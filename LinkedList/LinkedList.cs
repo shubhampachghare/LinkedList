@@ -8,25 +8,59 @@ namespace DataStructure
 {
     public class LinkedList
     {
-        internal node head;
-        public void Add(int id)
+        internal Node head;
+
+
+        public void Add(int data)
         {
-            node node1 = new node(id);
+            Node node = new Node(data);
             if (this.head == null)
             {
-                this.head = node1;
+                this.head = node;
             }
             else
             {
-                node temp = head;
+                Node temp = head;
                 while (temp.next != null)
                 {
                     temp = temp.next;
-                    temp.next = node1;
                 }
-
+                temp.next = node;
             }
-            Console.WriteLine("{0} is inserted int linked list ", node1.id);
+            Console.WriteLine("inserted into the linked list", node.data);
+        }
+
+
+        public void Add2(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                node.next = head;
+                this.head = node;
+            }
+            Console.WriteLine("inserted into the linked list", node.data);
+        }
+
+
+        public void Display()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked List is empty");
+            }
+            Console.WriteLine("Squence of linked list");
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data + " ");
+                temp = temp.next;
+            }
+            Console.WriteLine();
         }
     }
 }
