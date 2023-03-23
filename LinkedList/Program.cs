@@ -18,17 +18,23 @@ namespace DataStructure
             linkedList3.Add(70);
             //linkedList.Display();
             linkedList3.InsertAtParticularPoistion(2, 30);
-            linkedList3.Display();*/
-
-
-
+            linkedList3.Display();
             LinkedList remove = new LinkedList();
             remove.Add(56);
             remove.Add(30);
             remove.Add(70);
             remove.Display();
             Console.WriteLine("First element is poped out from linked list = " + remove.removeFirstNode().data);
-            remove.Display();
+            remove.Display();*/
+
+            LinkedList rm = new LinkedList();
+            rm.Add(56);
+            rm.Add(30);
+            rm.Add(70);
+            rm.Display();
+            Console.WriteLine("last element is poped out from linked list = " + rm.removeLastNode().data);
+            rm.Display();
+
         }
 
     }
