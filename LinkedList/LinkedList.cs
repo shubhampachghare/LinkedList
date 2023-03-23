@@ -9,7 +9,7 @@ namespace DataStructure
     public class LinkedList
     {
         internal Node head;
-        public void Append(int data)
+        public void Add(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
@@ -24,9 +24,6 @@ namespace DataStructure
                     temp = temp.next;
                 }
                 temp.next = node;
-                /*node.next = head;
-                this.head = node*/
-                ;
             }
             Console.WriteLine("{0} inserted into the linked list", node.data);
         }
@@ -46,6 +43,36 @@ namespace DataStructure
                 temp = temp.next;
             }
             Console.WriteLine();
+        }
+
+
+        public Node InsertAtParticularPoistion(int position, int data)
+        {
+            if (position < 1)
+                Console.WriteLine("Invalid Poistion");
+            if (position == 1)
+            {
+                var newNode = new Node(data);
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                while (position-- != 0)
+                {
+                    if (position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.head.next;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if (position != 1)
+                    Console.WriteLine("position out of range");
+            }
+            return head;
         }
     }
 }
